@@ -3,7 +3,7 @@ import concurrent.futures # La librairie jdida dyal ssor3a (Multithreading)
 from datetime import datetime
 
 # L'IP li bghiti t-scanni
-target = "192.168.1.22"
+target = "X.X.X.X"
 
 print("-" * 50)
 print(f"Bdit l-scan mjehed dyal l'IP : {target}")
