@@ -2,7 +2,7 @@ import socket
 import time
 import concurrent.futures
 
-TARGET_IP = "192.168.1.22"
+TARGET_IP = "x.x.x.x"  # Change to the IP you want to scan
 print(f"[*] Starting FAST Multithreaded Scan on {TARGET_IP}...")
 
 start_time = time.time()
