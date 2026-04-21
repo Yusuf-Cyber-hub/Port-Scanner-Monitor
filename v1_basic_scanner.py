@@ -1,18 +1,20 @@
 import socket
 import time
 
-target = "X.X.X.X" # IP dyal PC dyalk (Localhost)
-print(f"[*] Starting BASIC Scan on {target}...")
+# Target IP (Change x.x.x.x to the IP you want to scan)
+TARGET_IP = "x.x.x.x" 
+
+print(f"[*] Starting Basic Sequential Scan on {TARGET_IP}...")
 
 start_time = time.time()
 
-# Ghadi n-scanniw mn port 1 hta l 1024 (Les ports l-mohimin)
+# Scanning ports from 1 to 1024 (Well-known ports)
 for port in range(1, 1025):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    socket.setdefaulttimeout(0.1) # Kantsnaw 0.1s f kola port
+    socket.setdefaulttimeout(0.1) 
     
-    # connect_ex katrj3 0 ila kan l-port m7loul
-    result = s.connect_ex((target, port))
+    # connect_ex returns 0 if the connection was successful (Port is OPEN)
+    result = s.connect_ex((TARGET_IP, port))
     if result == 0:
         print(f"[+] Port {port} is OPEN")
         

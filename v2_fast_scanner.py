@@ -2,21 +2,21 @@ import socket
 import time
 import concurrent.futures
 
-target = "X.X.X.X" # IP dyal PC dyalk (Localhost)
-print(f"[*] Starting FAST Scan (Multithreaded) on {target}...")
+TARGET_IP = "192.168.1.22"
+print(f"[*] Starting FAST Multithreaded Scan on {TARGET_IP}...")
 
 start_time = time.time()
 
-# Function li kat-scanni port wa7ed
 def scan_port(port):
+    """Attempts to connect to a specific port to check if it's open."""
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     socket.setdefaulttimeout(0.5)
-    result = s.connect_ex((target, port))
+    result = s.connect_ex((TARGET_IP, port))
     if result == 0:
         print(f"[+] Port {port} is OPEN")
     s.close()
 
-# Hna kankhldmo b 100 Threads (100 khedam kayscanniw f nefs l-weqt)
+# Using ThreadPoolExecutor to run multiple port scans concurrently
 with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
     for port in range(1, 1025):
         executor.submit(scan_port, port)
