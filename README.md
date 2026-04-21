@@ -23,8 +23,11 @@ This project is divided into three stages to demonstrate continuous improvement 
    ```bash
    git clone https://github.com/Yusuf-Cyber-hub/Port-Scanner-Monitor.git
 2. Navigate to the directory:
-    cd Port-Scanner-Monitor
+     ```bash
+        cd Port-Scanner-Monitor
 3. Run the Stateful Monitor via CLI:
-    python v3_stateful_monitor.py -i x.x.x.x
-⚠️ Security Disclaimer
-This tool is created for Educational Purposes and internal network monitoring only. Do not use this tool to scan networks or IP addresses that you do not own or have explicit permission to scan.
+    ```bash
+        python v3_stateful_monitor.py -i x.x.x.x
+
+## ⚠️ Security Disclaimer :
+- This tool is created for Educational Purposes and internal network monitoring only. Do not use this tool to scan networks or IP addresses that you do not own or have explicit permission to scan.
